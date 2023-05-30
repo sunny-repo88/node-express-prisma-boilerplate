@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  node-app:
+    container_name: node-app-test
+    command:
+      - /bin/bash
+      - -c 
+      - |
+        npx prisma generate
+        npx prisma migrate dev
+        npm run test
